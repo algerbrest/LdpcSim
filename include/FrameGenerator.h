@@ -10,7 +10,7 @@
 
 
 #include<string.h>
-
+#include <time.h>
 
 #define SIZE_UNCODED_FRAME 288
 
