@@ -8,8 +8,19 @@
 	03/06/2021	
 */
 
+/* 
+	LDPC Codec Sim.
+	----------------------------------------------------------------------------
+	Bit Generator       
+	----------------------------------------------------------------------------
+
+	03/06/2021	
+*/
+
 
 #include<string.h>
+#include<stdio.h>
+#include<stdlib.h>
 #include <time.h>
 
 #define SIZE_UNCODED_FRAME 288

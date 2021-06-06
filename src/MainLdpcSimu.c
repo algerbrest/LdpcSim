@@ -12,6 +12,7 @@
 
 #include"../include/MainldpcSimu.h"
 #include"../include/FrameGenerator.h"
+#include "../include/LdpcEncoder.h"
 
 
 
@@ -28,6 +29,9 @@ printf("\n***** Init start ***** \n");
 // Init. the FrameGenerator Unit
 (void) FrameGenerator_Init(&uframe);
 
+// Init. the LdpcEncoder Unit
+(void) LdpcEncoder_Init();
+
 
 
 printf("***** Init done *****\n\n");
@@ -40,9 +44,9 @@ for(int i=0;i<NUM_FRAMES;i++)
 {
 (void) FrameGenerator_Runnable(&uframe);
 //printf("Frame %d first bits is %f %f %f %f %f\n",i,uframe.bits[0],uframe.bits[1],uframe.bits[2],uframe.bits[3],uframe.bits[4]);
+(void) LdpcEncoder_Runnable();
 }
 
 printf("***** Simulation End ***** \n\n");
 
-//return(0);
 }
