@@ -43,7 +43,9 @@ printf("***** Simulation Start ***** \n");
 for(int i=0;i<NUM_FRAMES;i++)
 {
 (void) FrameGenerator_Runnable(&uframe);
-//printf("Frame %d first bits is %f %f %f %f %f\n",i,uframe.bits[0],uframe.bits[1],uframe.bits[2],uframe.bits[3],uframe.bits[4]);
+#ifdef DEBUG 
+printf("Frame %d first bits is %f %f %f %f %f\n",i,uframe.bits[0],uframe.bits[1],uframe.bits[2],uframe.bits[3],uframe.bits[4]);
+#endif
 (void) LdpcEncoder_Runnable();
 }
 
