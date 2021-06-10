@@ -13,6 +13,8 @@
 #include"../include/MainldpcSimu.h"
 #include"../include/FrameGenerator.h"
 #include "../include/LdpcEncoder.h"
+#include "../include/BpskModulator.h"
+
 
 
 
@@ -32,23 +34,34 @@ printf("\n***** Init start ***** \n");
 // Init. the LdpcEncoder Unit
 (void) LdpcEncoder_Init();
 
-
+// Init. the LdpcEncoder Unit
+(void) BpskModulator_Init();
 
 printf("***** Init done *****\n\n");
 /////////////////////////////////////////////
 // Runnable function
 /////////////////////////////////////////////
-printf("***** Simulation Start ***** \n");
+printf("***** Runnable Start ***** \n");
 
 for(int i=0;i<NUM_FRAMES;i++)
 {
+
+printf("** Run Frame  %d \n" ,i);
+// Run the FrameGenerator Unit	
 (void) FrameGenerator_Runnable(&uframe);
 #ifdef DEBUG 
 printf("Frame %d first bits is %f %f %f %f %f\n",i,uframe.bits[0],uframe.bits[1],uframe.bits[2],uframe.bits[3],uframe.bits[4]);
 #endif
+
+// Run the LdpcEncoder Unit
 (void) LdpcEncoder_Runnable();
+
+// Run the BpskModulator Unit
+(void) BpskModulator_Runnable();
+
+
 }
 
-printf("***** Simulation End ***** \n\n");
+printf("***** Runnable End ***** \n\n");
 
 }
