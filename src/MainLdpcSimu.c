@@ -21,7 +21,9 @@
 
 void main(void){
 
-UNCODED_FRAME uframe;
+UNCODED_FRAME uframe;   // from FrameGenerator.h
+CODED_FRAME cframe;		// from LdpcEncoder.h
+
 
 /////////////////////////////////////////////
 // Init. function - intitialize all the units
@@ -32,7 +34,7 @@ printf("\n***** Init start ***** \n");
 (void) FrameGenerator_Init(&uframe);
 
 // Init. the LdpcEncoder Unit
-(void) LdpcEncoder_Init();
+(void) LdpcEncoder_Init(&cframe);
 
 // Init. the LdpcEncoder Unit
 (void) BpskModulator_Init();

@@ -8,7 +8,17 @@
 */
 
 #include<stdio.h>
+#include<string.h>
 
-void LdpcEncoder_Init(void);
+#define SIZE_CODED_FRAME 576
+
+typedef  float   BIT;
+
+typedef struct CFRAME 
+{
+	BIT bits[SIZE_CODED_FRAME];		// Static table containing bits 
+} CODED_FRAME;
+
+void LdpcEncoder_Init(CODED_FRAME *);
 
 void LdpcEncoder_Runnable(void);
