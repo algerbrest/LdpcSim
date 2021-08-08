@@ -23,12 +23,19 @@ void main(void){
 
 UNCODED_FRAME uframe;   // from FrameGenerator.h
 CODED_FRAME cframe;		// from LdpcEncoder.h
+time_t timestamp;
+struct tm *t;
 
 
 /////////////////////////////////////////////
 // Init. function - intitialize all the units
 ///////////////////////////////////////////// 
 printf("\n***** Init start ***** \n");
+
+timestamp = time (NULL);
+t = localtime(&timestamp);
+printf ("\n Init starts at: %d/%d  -->  %02uh %02um %02us\n", t->tm_mday, 1+ t->tm_mon, t -> tm_hour, t -> tm_min, t -> tm_sec);
+	
 
 // Init. the FrameGenerator Unit
 (void) FrameGenerator_Init(&uframe);
