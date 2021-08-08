@@ -32,9 +32,10 @@ struct tm *t;
 ///////////////////////////////////////////// 
 printf("\n***** Init start ***** \n");
 
+// Timestamp 
 timestamp = time (NULL);
 t = localtime(&timestamp);
-printf ("\n Init starts at: %d/%d  -->  %02uh %02um %02us\n", t->tm_mday, 1+ t->tm_mon, t -> tm_hour, t -> tm_min, t -> tm_sec);
+printf ("Init starts at: %d/%d  -->  %02uh %02um %02us\n", t->tm_mday, t->tm_mon, t -> tm_hour, t -> tm_min, t -> tm_sec);
 	
 
 // Init. the FrameGenerator Unit
@@ -46,30 +47,43 @@ printf ("\n Init starts at: %d/%d  -->  %02uh %02um %02us\n", t->tm_mday, 1+ t->
 // Init. the LdpcEncoder Unit
 (void) BpskModulator_Init();
 
+// Timestamp 
+timestamp = time (NULL);
+t = localtime(&timestamp);
+printf ("Init ends at: %d/%d  -->  %02uh %02um %02us\n", t->tm_mday, t->tm_mon, t -> tm_hour, t -> tm_min, t -> tm_sec);
+
+
 printf("***** Init done *****\n\n");
 /////////////////////////////////////////////
 // Runnable function
 /////////////////////////////////////////////
 printf("***** Runnable Start ***** \n");
 
+// Timestamp 
+timestamp = time (NULL);
+t = localtime(&timestamp);
+printf ("Runnable starts at: %d/%d  -->  %02uh %02um %02us\n", t->tm_mday, t->tm_mon, t -> tm_hour, t -> tm_min, t -> tm_sec);
 for(int i=0;i<NUM_FRAMES;i++)
 {
 
 printf("** Run Frame  %d \n" ,i);
+
 // Run the FrameGenerator Unit	
 (void) FrameGenerator_Runnable(&uframe);
 #ifdef DEBUG 
 printf("Frame %d first bits is %f %f %f %f %f\n",i,uframe.bits[0],uframe.bits[1],uframe.bits[2],uframe.bits[3],uframe.bits[4]);
 #endif
-
 // Run the LdpcEncoder Unit
 (void) LdpcEncoder_Runnable();
 
 // Run the BpskModulator Unit
 (void) BpskModulator_Runnable();
-
-
 }
+
+// Timestamp 
+timestamp = time (NULL);
+t = localtime(&timestamp);
+printf ("Runnable starts at: %d/%d  -->  %02uh %02um %02us\n", t->tm_mday,  t->tm_mon, t -> tm_hour, t -> tm_min, t -> tm_sec);
 
 printf("***** Runnable End ***** \n\n");
 
