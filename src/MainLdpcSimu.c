@@ -70,7 +70,7 @@ printf("** Run Frame  %d \n" ,i);
 
 // Run the FrameGenerator Unit	
 (void) FrameGenerator_Runnable(&uframe);
-#ifdef DEBUG 
+#ifdef DEBUG_DATA 
 printf("Frame %d first bits is %f %f %f %f %f\n",i,uframe.bits[0],uframe.bits[1],uframe.bits[2],uframe.bits[3],uframe.bits[4]);
 #endif
 // Run the LdpcEncoder Unit
