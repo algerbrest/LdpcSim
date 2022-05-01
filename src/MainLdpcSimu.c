@@ -17,8 +17,6 @@
 
 
 
-
-
 void main(void){
 
 UNCODED_FRAME uframe;   // from FrameGenerator.h
@@ -26,6 +24,11 @@ CODED_FRAME cframe;		// from LdpcEncoder.h
 time_t timestamp;
 struct tm *t;
 
+
+int x = 0xa;
+
+
+printf("/n   %04x  /n",(x<<2));
 
 /////////////////////////////////////////////
 // Init. function - intitialize all the units
