@@ -10,6 +10,9 @@
 */
 
 
+
+
+
 #include"../include/MainldpcSimu.h"
 #include"../include/FrameGenerator.h"
 #include "../include/LdpcEncoder.h"
@@ -21,8 +24,6 @@ void main(void){
 
 UNCODED_FRAME uframe;   // from FrameGenerator.h
 CODED_FRAME cframe;		// from LdpcEncoder.h
-time_t timestamp;
-struct tm *t;
 
 
 int x = 0xa;
@@ -36,9 +37,6 @@ printf("/n   %04x  /n",(x<<2));
 printf("\n***** Init start ***** \n");
 
 // Timestamp 
-timestamp = time (NULL);
-t = localtime(&timestamp);
-printf ("Init starts at: %d/%d  -->  %02uh %02um %02us\n", t->tm_mday, t->tm_mon, t -> tm_hour, t -> tm_min, t -> tm_sec);
 	
 
 // Init. the FrameGenerator Unit
@@ -51,9 +49,6 @@ printf ("Init starts at: %d/%d  -->  %02uh %02um %02us\n", t->tm_mday, t->tm_mon
 (void) BpskModulator_Init();
 
 // Timestamp 
-timestamp = time (NULL);
-t = localtime(&timestamp);
-printf ("Init ends at: %d/%d  -->  %02uh %02um %02us\n", t->tm_mday, t->tm_mon, t -> tm_hour, t -> tm_min, t -> tm_sec);
 
 
 printf("***** Init done *****\n\n");
@@ -63,9 +58,6 @@ printf("***** Init done *****\n\n");
 printf("***** Runnable Start ***** \n");
 
 // Timestamp 
-timestamp = time (NULL);
-t = localtime(&timestamp);
-printf ("Runnable starts at: %d/%d  -->  %02uh %02um %02us\n", t->tm_mday, t->tm_mon, t -> tm_hour, t -> tm_min, t -> tm_sec);
 for(int i=0;i<NUM_FRAMES;i++)
 {
 
@@ -84,9 +76,6 @@ printf("Frame %d first bits is %f %f %f %f %f\n",i,uframe.bits[0],uframe.bits[1]
 }
 
 // Timestamp 
-timestamp = time (NULL);
-t = localtime(&timestamp);
-printf ("Runnable starts at: %d/%d  -->  %02uh %02um %02us\n", t->tm_mday,  t->tm_mon, t -> tm_hour, t -> tm_min, t -> tm_sec);
 
 printf("***** Runnable End ***** \n\n");
 
