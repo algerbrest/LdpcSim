@@ -9,7 +9,7 @@
 	03/06/2021	
 */
 
-
+//#define DEBUG_DATA
 
 
 
@@ -24,6 +24,7 @@ void main(void){
 
 UNCODED_FRAME uframe;   // from FrameGenerator.h
 CODED_FRAME cframe;		// from LdpcEncoder.h
+G_MATRIX gmatrix;		// from LdpcEncoder.h
 
 
 int x = 0xa;
@@ -43,7 +44,7 @@ printf("\n***** Init start ***** \n");
 (void) FrameGenerator_Init(&uframe);
 
 // Init. the LdpcEncoder Unit
-(void) LdpcEncoder_Init(&cframe);
+(void) LdpcEncoder_Init(&cframe,&gmatrix);
 
 // Init. the LdpcEncoder Unit
 (void) BpskModulator_Init();
@@ -66,10 +67,11 @@ printf("** Run Frame  %d \n" ,i);
 // Run the FrameGenerator Unit	
 (void) FrameGenerator_Runnable(&uframe);
 #ifdef DEBUG_DATA 
-printf("Frame %d first bits is %f %f %f %f %f\n",i,uframe.bits[0],uframe.bits[1],uframe.bits[2],uframe.bits[3],uframe.bits[4]);
+printf("Frame %d first bits are %f %f %f %f %f\n",i,uframe.bits[0],uframe.bits[1],uframe.bits[2],uframe.bits[3],uframe.bits[4]);
 #endif
 // Run the LdpcEncoder Unit
 (void) LdpcEncoder_Runnable();
+
 
 // Run the BpskModulator Unit
 (void) BpskModulator_Runnable();
@@ -78,5 +80,6 @@ printf("Frame %d first bits is %f %f %f %f %f\n",i,uframe.bits[0],uframe.bits[1]
 // Timestamp 
 
 printf("***** Runnable End ***** \n\n");
+getchar();
 
 }
