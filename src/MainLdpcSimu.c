@@ -28,8 +28,6 @@ G_MATRIX gmatrix;		// from LdpcEncoder.h
 
 
 int x = 0xa;
-
-
 printf("/n   %04x  /n",(x<<2));
 
 /////////////////////////////////////////////

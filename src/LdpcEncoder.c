@@ -19,6 +19,7 @@ void LdpcEncoder_Init(CODED_FRAME *cf, G_MATRIX *gm)
 // Initialize the CODED_FRAME buffer	
 memset(cf->bits, 0, SIZE_CODED_FRAME*sizeof(cf->bits[0]));
 
+
 // Load the Generator Matrix --> Used for the encoding 
 FILE* fp_g;
 if ((fp_g = fopen("../src/g_matrix.txt", "rt")) == NULL)
@@ -32,14 +33,10 @@ else
 		for (int j = 0; j < (SIZE_CODED_FRAME - SIZE_UNCODED_FRAME); j++)   // (N-M)
 		{
 			//fscanf(fp_g, "%d", (G + j) + i * (N - M));
-
-
+			fscanf(fp_g, "%f", &gm->bits[j+i* (SIZE_CODED_FRAME - SIZE_UNCODED_FRAME)]);
 		}
 	}
-
-
-
-
+		
 }
 
 // Init. FInished
