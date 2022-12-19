@@ -6,7 +6,7 @@
     Bit Comparison  <-  LDPC Decoding  <-  BPSK Demo  <-    --------------
 	----------------------------------------------------------------------------
 
-	03/06/2021	
+	19/12/2022	
 */
 
 //#define DEBUG_DATA
@@ -27,8 +27,8 @@ CODED_FRAME cframe;		// from LdpcEncoder.h
 G_MATRIX gmatrix;		// from LdpcEncoder.h
 
 
-int x = 0xa;
-printf("/n   %04x  /n",(x<<2));
+//int x = 0xa;
+//printf("/n   %04x  /n",(x<<2));
 
 /////////////////////////////////////////////
 // Init. function - intitialize all the units
