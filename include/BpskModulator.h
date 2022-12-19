@@ -10,7 +10,16 @@
 #include<stdio.h>
 
 
+#define SIZE_MODULATED_FRAME 576
 
-void BpskModulator_Init(void);
+typedef  float   BIT;
+
+typedef struct MFRAME
+{
+	BIT bits[SIZE_MODULATED_FRAME];		// Static table containing bits 
+} MODULATED_FRAME;
+
+
+void BpskModulator_Init(MODULATED_FRAME *);
 
 void BpskModulator_Runnable(void);
