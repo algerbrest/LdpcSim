@@ -25,6 +25,7 @@ void main(void){
 UNCODED_FRAME uframe;   // from FrameGenerator.h
 CODED_FRAME cframe;		// from LdpcEncoder.h
 G_MATRIX gmatrix;		// from LdpcEncoder.h
+MODULATED_FRAME mframe; // from BpskModulator.h
 
 
 //int x = 0xa;
@@ -45,7 +46,7 @@ printf("\n***** Init start ***** \n");
 (void) LdpcEncoder_Init(&cframe,&gmatrix);
 
 // Init. the LdpcEncoder Unit
-(void) BpskModulator_Init();
+(void) BpskModulator_Init(&cframe,&mframe);
 
 // Timestamp 
 
