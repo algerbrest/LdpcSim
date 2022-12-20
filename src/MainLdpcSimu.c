@@ -46,7 +46,7 @@ printf("\n***** Init start ***** \n");
 (void) LdpcEncoder_Init(&cframe,&gmatrix);
 
 // Init. the LdpcEncoder Unit
-(void) BpskModulator_Init(&mframe);
+(void) BpskModulator_Init(&cframe,&mframe);
 
 // Timestamp 
 
