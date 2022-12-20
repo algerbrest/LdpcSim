@@ -1,9 +1,9 @@
 /* 
 	LDPC Codec 
 	----------------------------------------------------------------------------
-	Bit Generator   ->  LDPC Encoding  ->  BPSK Mod   ->    --------------	
+	Frame Generator   ->  LDPC Encoding  ->  BPSK Mod   ->    --------------	
 									    	        	     AWGN channel   	
-    Bit Comparison  <-  LDPC Decoding  <-  BPSK Demo  <-    --------------
+    Frame Comparison  <-  LDPC Decoding  <-  BPSK Demo  <-    --------------
 	----------------------------------------------------------------------------
 
 	19/12/2022	
@@ -45,8 +45,17 @@ printf("\n***** Init start ***** \n");
 // Init. the LdpcEncoder Unit
 (void) LdpcEncoder_Init(&cframe,&gmatrix);
 
-// Init. the LdpcEncoder Unit
+// Init. the BpskModulator Unit
 (void) BpskModulator_Init(&cframe,&mframe);
+
+// Init. the AwgnChannel Unit
+
+// Init. the BpskDemodulator Unit
+
+// Init. the LdpcDecoder Unit
+
+// Init. the FrameComparator Unit
+
 
 // Timestamp 
 
