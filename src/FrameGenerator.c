@@ -20,7 +20,7 @@
 
 void FrameGenerator_Init(UNCODED_FRAME *uf){
 memset(uf->bits, 0, SIZE_UNCODED_FRAME*sizeof(uf->bits[0]));
-srand( time( NULL ) );
+//srand( time( NULL ) );
 printf("FrameGenerator Initilized\n");
 }
 

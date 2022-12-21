@@ -33,7 +33,7 @@ else
 		for (int j = 0; j < (SIZE_CODED_FRAME - SIZE_UNCODED_FRAME); j++)   // (N-M)
 		{
 			//fscanf(fp_g, "%d", (G + j) + i * (N - M));
-			if (fscanf(fp_g, "%f", &gm->bits[j + i * (SIZE_CODED_FRAME - SIZE_UNCODED_FRAME)]) == NULL)
+			if (fscanf(fp_g, "%f", &gm->bits[j + i * (SIZE_CODED_FRAME - SIZE_UNCODED_FRAME)]) == 0)
 			{
 				printf(" 'g_matrix.txt' reading is impossible !");
 			}
