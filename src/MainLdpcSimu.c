@@ -2,7 +2,7 @@
 	LDPC Codec 
 	----------------------------------------------------------------------------
 	Frame Generator   ->  LDPC Encoding  ->  BPSK Mod   ->    --------------	
-									    	        	     AWGN channel   	
+									    	        	       AWGN channel   	
     Frame Comparison  <-  LDPC Decoding  <-  BPSK Demo  <-    --------------
 	----------------------------------------------------------------------------
 
