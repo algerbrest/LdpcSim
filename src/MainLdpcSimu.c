@@ -88,6 +88,5 @@ printf("Frame %d first bits are %f %f %f %f %f\n",i,uframe.bits[0],uframe.bits[1
 // Timestamp 
 
 printf("***** Runnable End ***** \n\n");
-getchar();
 
 }
