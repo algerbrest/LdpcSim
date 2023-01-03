@@ -46,7 +46,7 @@ printf("\n***** Init start ***** \n");
 (void) LdpcEncoder_Init(&cframe,&gmatrix);
 
 // Init. the BpskModulator Unit
-(void) BpskModulator_Init((CODED_FRAME_TOMOD*) &cframe,&mframe);
+(void) BpskModulator_Init(&mframe);
 
 // Init. the AwgnChannel Unit
 

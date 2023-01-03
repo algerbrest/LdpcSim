@@ -28,6 +28,6 @@ typedef struct CFRAME_TOMOD
 } CODED_FRAME_TOMOD;
 
 
-void BpskModulator_Init(CODED_FRAME_TOMOD*,MODULATED_FRAME *);
+void BpskModulator_Init(MODULATED_FRAME *);
 
 void BpskModulator_Runnable(void);
