@@ -17,6 +17,7 @@
 #include"../include/FrameGenerator.h"
 #include "../include/LdpcEncoder.h"
 #include "../include/BpskModulator.h"
+#include"../include/AwgnChannel.h"
 
 
 
@@ -26,6 +27,8 @@ UNCODED_FRAME uframe;   // from FrameGenerator.h
 CODED_FRAME cframe;		// from LdpcEncoder.h
 G_MATRIX gmatrix;		// from LdpcEncoder.h
 MODULATED_FRAME mframe; // from BpskModulator.h
+AWGN_MODULATED_FRAME awgnmframe; // from AwgnChannel.h
+
 
 
 //int x = 0xa;
@@ -49,6 +52,7 @@ printf("\n***** Init start ***** \n");
 (void) BpskModulator_Init(&mframe);
 
 // Init. the AwgnChannel Unit
+(void)AwgnChannel_Init(&awgnmframe);
 
 // Init. the BpskDemodulator Unit
 
