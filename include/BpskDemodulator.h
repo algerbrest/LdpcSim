@@ -11,9 +11,7 @@
 #include<stdlib.h>
 #include<string.h>
 
-
 #define SIZE_DEMODULATED_FRAME 576
-
 
 typedef  float   BIT;
 

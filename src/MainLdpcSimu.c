@@ -18,6 +18,8 @@
 #include "../include/LdpcEncoder.h"
 #include "../include/BpskModulator.h"
 #include"../include/AwgnChannel.h"
+#include "../include/BpskDemodulator.h"
+
 
 
 
@@ -28,11 +30,12 @@ CODED_FRAME cframe;		// from LdpcEncoder.h
 G_MATRIX gmatrix;		// from LdpcEncoder.h
 MODULATED_FRAME mframe; // from BpskModulator.h
 AWGN_MODULATED_FRAME awgnmframe; // from AwgnChannel.h
+DEMODULATED_FRAME dmframe; // from BpskDemodulator.h
 
 
-
-//int x = 0xa;
-//printf("/n   %04x  /n",(x<<2));
+/*int x = 0xa;
+printf("/n   %08x  /n", x);
+printf("/n   %04x  /n",(x<<2));*/
 
 /////////////////////////////////////////////
 // Init. function - intitialize all the units
@@ -55,6 +58,7 @@ printf("\n***** Init start ***** \n");
 (void)AwgnChannel_Init(&awgnmframe);
 
 // Init. the BpskDemodulator Unit
+(void)BpskDemodulator_Init(&dmframe);
 
 // Init. the LdpcDecoder Unit
 
