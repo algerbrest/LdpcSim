@@ -19,6 +19,7 @@
 #include "../include/BpskModulator.h"
 #include"../include/AwgnChannel.h"
 #include "../include/BpskDemodulator.h"
+#include "../include/LdpcDecoder.h"
 
 
 
@@ -61,6 +62,9 @@ printf("\n***** Init start ***** \n");
 (void)BpskDemodulator_Init(&dmframe);
 
 // Init. the LdpcDecoder Unit
+
+
+
 
 // Init. the FrameComparator Unit
 
