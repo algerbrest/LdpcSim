@@ -34,9 +34,9 @@ AWGN_MODULATED_FRAME awgnmframe; // from AwgnChannel.h
 DEMODULATED_FRAME dmframe; // from BpskDemodulator.h
 
 
-/*int x = 0xa;
-printf("/n   %08x  /n", x);
-printf("/n   %04x  /n",(x<<2));*/
+int x = 0xa;
+printf("   %08x\n", x);
+printf("   %04x\n",(x<<1));
 
 /////////////////////////////////////////////
 // Init. function - intitialize all the units
@@ -73,6 +73,7 @@ printf("\n***** Init start ***** \n");
 
 
 printf("***** Init done *****\n\n");
+printf("\n");
 /////////////////////////////////////////////
 // Runnable function
 /////////////////////////////////////////////

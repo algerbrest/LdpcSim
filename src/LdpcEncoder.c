@@ -38,7 +38,7 @@ else
 				printf(" 'g_matrix.txt' reading is impossible !");
 			}
 			else {
-
+				// Read of the element from the file succeeded.
 			}
 		}
 	}
