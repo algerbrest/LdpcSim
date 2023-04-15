@@ -32,6 +32,9 @@ G_MATRIX gmatrix;		// from LdpcEncoder.h
 MODULATED_FRAME mframe; // from BpskModulator.h
 AWGN_MODULATED_FRAME awgnmframe; // from AwgnChannel.h
 DEMODULATED_FRAME dmframe; // from BpskDemodulator.h
+H_MATRIX hmatrix;		// from LdpcDecoder.h
+DECODED_FRAME dcframe;	// from LdpcDecoder.h
+
 
 
 int x = 0xa;
