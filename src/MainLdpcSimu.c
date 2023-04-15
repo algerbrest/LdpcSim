@@ -65,7 +65,7 @@ printf("\n***** Init start ***** \n");
 (void)BpskDemodulator_Init(&dmframe);
 
 // Init. the LdpcDecoder Unit
-
+(void) LdpcDecoder_Init(&dcframe, &hmatrix);
 
 
 
@@ -100,6 +100,10 @@ printf("Frame %d first bits are %f %f %f %f %f\n",i,uframe.bits[0],uframe.bits[1
 // Run the BpskModulator Unit
 (void) BpskModulator_Runnable();
 }
+
+// Run the LdpcDecoder Unit
+(void) LdpcDecoder_Runnable();
+
 
 // Timestamp 
 

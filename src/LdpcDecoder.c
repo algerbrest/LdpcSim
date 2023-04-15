@@ -8,6 +8,8 @@
 	10/04/2023
 */
 
+#pragma warning (disable : 4996)
+
 #include "../include/LdpcDecoder.h"
 
 
@@ -40,5 +42,13 @@ void LdpcDecoder_Init(DECODED_FRAME* df, H_MATRIX* hm)
 	    }
 	}
 
+// Init. FInished
+printf("LdpcDecoder Initilized\n");
 
+}
+
+
+void LdpcDecoder_Runnable(void)
+{
+	printf("LdpcDecoder Run\n");
 }

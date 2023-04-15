@@ -28,3 +28,5 @@ typedef struct DFRAME
 
 void LdpcDecoder_Init(DECODED_FRAME*, H_MATRIX*);
 
+void LdpcDecoder_Runnable(void);
+
