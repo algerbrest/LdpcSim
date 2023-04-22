@@ -37,7 +37,7 @@ DECODED_FRAME dcframe;	// from LdpcDecoder.h
 
 
 
-//int x = 0xa;
+int x = 0xa;
 printf("   %08x\n", x);
 printf("   %04x\n",(x<<1));
 
